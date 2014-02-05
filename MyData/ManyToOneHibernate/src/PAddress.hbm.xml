@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="core.PAddress" table="P_ADDRESS">
+<id name="addrid" type="integer" column="ADD_ID">
+<generator class="assigned"/>
+</id>
+<property name="city" column="CITY"></property>
+<property name="state" column="STATE"></property>
+
+</class>
+</hibernate-mapping>

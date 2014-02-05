@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<context:annotation-config/>
+
+<bean id="a" class="core.Battery" >
+<property name="name" value="Amaron"></property>
+<property name="price" value="100"></property>
+</bean>
+
+<bean id="cd" class="core.Disk" >
+<property name="name" value="Aakash"></property>
+<property name="price" value="50"></property>
+</bean>
+
+<bean id="dvd" class="core.Disk" >
+<property name="name" value="HDD"></property>
+<property name="price" value="80"></property>
+</bean>
+
+<bean id="shoppingCart" class="core.ShoppingCart" scope="prototype"></bean>
+
+<bean id="cashier" class="core.Cashier" init-method="openFile" destroy-method="closeFile">
+<property name="name" value="Cashier"></property>
+<!-- <property name="path" value="E:\Projects\SpringPrototyping\"></property> -->
+<property name="path" value="${cashier.path}"></property>
+</bean>
+
+<context:property-placeholder location="config.properties"/>
+
+</beans>
